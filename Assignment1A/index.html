@@ -1,1 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lifelife Hospital Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+      body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color:whitesmoke;
+}
+      
+       .row.content {height: 550px}
 
+/* Siderbar */
+.sidebar {
+  margin: 0px;
+  padding: 0px;
+  width: 250px;
+  background-color: black;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  background-color: black;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color:slateblue;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Top bar */
+.top-bar {
+    background-color:midnightblue;
+    height:50px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px; 
+    padding-left: 20px;
+    
+}      
+      
+div.content {
+  margin-left: 250px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* Cards for details */
+.cards {
+    background-color:darkcyan;
+    color:ghostwhite;
+}
+      
+
+/* Chart for Weekly Patient's Visit*/      
+.box
+{
+	position:relative;
+	left: 25%;
+	left: 50%;
+	transform: translate(-50%,5%);
+	width: 98%;
+	height: 300px;
+	background-color:antiquewhite;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+	display: flex;
+    padding-top: 20px;
+}
+.box .skills
+{
+	position: relative;
+	flex: 1;
+	text-align: center;
+}
+.box .skills .graph
+{
+	position: absolute;
+	width: 40px;
+	background: rgba(0, 0, 0, 1);
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.box .skills .graph:before
+{
+	content: ' ';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	right: 2px;
+	bottom: 0;
+	background: linear-gradient(0deg, #003ba5, #009ffe);
+}
+.box .skills .graph:after
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: rgba(255, 255, 255, .1);
+}
+.box .skills .graph .percent
+{
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translate(-50%);
+	text-align: center;
+	color:deeppink ;
+	font-weight: bold;
+}
+.box .skills .name
+{
+	position: absolute;
+	bottom: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: #fff;
+	background: #001e8a;
+	padding: 2px 6px;
+	border-radius: 4%;
+}   
+ 
+      
+/* Pie Chart for Daily Analysis */     
+.pie-cover {
+    margin-top: 20px; 
+    }      
+    
+.pie-border {
+    padding-left:100px;
+}     
+.piechart {
+            margin-top: 20px;
+            display: block;
+            position: absolute;
+            width: 290px;
+            height: 290px;
+            border-radius: 50%;
+            background-image: conic-gradient(
+                orangered 120deg, 
+                #BF2954 0 190deg, 
+                palegreen 0 225deg,
+                  lightcoral 0 265deg, 
+               lightblue 0); 
+        }
+  
+
+.piechart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+}      
+
+/* Table for displaying colors in pie-chart*/
+.first-table {
+  width: 50%;
+  margin-left: 250px;
+}
+      
+.table-row {
+  display: flex;
+  margin-left:5%;
+  margin-top: 15%;    
+    position:inherit;
+    width:100%
+}
+      
+.first-td {
+  text-align: right ;
+    padding-right: 0px;
+  padding-top: 5px;
+    padding-bottom: 5px;
+}
+ 
+/* Table for displaying patient's history*/
+.second-row {
+  display: flex;
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.second-column {
+  padding:5px 10px 5px;
+  width:100%;
+}
+
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.th, .td {
+  text-align: left;
+  padding: 16px;
+}
+
+.tr:nth-child(even) {
+  background-color: #f2f2f2;
+}      
+   
+.wrap-table {
+    margin-top: 50px;
+    width:100%;
+}
+  
+.btn {
+      margin:5px 50px 5px 5px;
+      width:50px;
+      height:50px;
+      background-color: darkblue;
+      color:white;
+    border-radius: 50%;
+}
+    
+/*Responsive */
+@media screen and (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  
+    .box {
+        width: 98%;   
+    }
+    
+  div.content {margin-left: 0;}
+    
+     .pie-cover{
+              margin-top: 100px;
+          }
+          
+          .pie-border {
+            padding-left:30px;
+        }
+    
+    .wrap-table {
+        margin-top: 120px;
+        width: 100%;
+        margin-left: 0px;
+    }
+    
+    .btn {
+        width:50px;
+    }
+    
+    .top-bar {
+        display: none;
+    }
+}
+      
+      
+      
+@media screen and (max-width: 400px) {
+    .sidebar {
+        display: none;
+  }
+}
+
+/* Footer Data*/
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100%;
+    margin-left: 0px;
+
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+
+    border-radius: 50%;
+
+}
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+
+
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width:100%;
+    padding: 20px;
+padding-bottom: 40px;
+    text-align: center;
+}
+.footer-bottom p{
+float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom p a{
+  color:#44bae8;
+  font-size: 16px;
+  text-decoration: none;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.footer-menu{
+  float: right;
+
+}
+.footer-menu ul{
+  display: flex;
+}
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+.footer-menu ul li a{
+  color: #cfd2d6;
+  text-decoration: none;
+}
+.footer-menu ul li a:hover{
+  color: #27bcda;
+}
+
+@media (max-width:500px) {
+.footer-menu ul{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- Nav bar when the screen resoltuion will be less than 767px for mobile phones -->    
+<nav class="navbar navbar-inverse visible-xs" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+        <a class="navbar-brand" href="#"><h4 style="color:white;">Lifeline Hospital</h4></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li><a href="#section1">Home</a></li>
+        <li><a href="#section3">Doctor</a></li>
+          <li><a href="#section2">Patient</a></li>
+          <li><a href="#section3">Nurse</a></li>
+          <li><a href="#section3">Storage</a></li>
+        <li><a href="#section3">Settings</a></li>
+        <li><a href="#section3">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+<!-- Sidebar for dekstop/laptop -->          
+<div class="sidebar">
+  <a style="text-decoration: none;"><h4> <img src="Logo.png" style="height:30px;width:30px;">     Lifeline Hospital</h4>    </a>
+  <a><img src="admin_img.png" style="height:50px;width:50px;border-radius: 50%;text-align: center;margin-left: 80px;">  <p style="text-align: center">Welcome,  <br>    Ms. Shreeya</p></a>    
+  <a class="active" href="#home">Dashboard</a>
+  <a href="#section1">Home</a>
+  <a href="#section3">Doctor</a>
+  <a href="#section2">Patient</a>
+  <a href="#section3">Nurse</a>
+  <a href="#section3">Storage</a>
+  <a href="#section3">Settings</a>
+  <a href="#section3">Log Out</a>
+</div>
+
+    
+<!-- Top bar displaying dashboard page-->    
+<div class="top-bar">
+    <h4 style="color: bisque;margin-right:20px;padding-top: 15px;  margin-top: 0px;float: right">Admin/Dashboard/</h4>
+</div> 
+<div class="content">
+    
+   
+<!-- Displaying availability of equipments in hospital -->    
+<div class="col-sm-12" style="width: 100%;">
+ <div class="well" >
+        
+  <h2>Availability</h2>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">   Ventilator : 70% Available    
+    </div>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%"> ICU : 50% Available
+    </div>
+  </div>
+          
+  <div class="progress">
+    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+      Beds : 40% Avaialble
+    </div>
+  </div>
+          
+  <div class="progress">
+    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+      Oxygen : 30% Available
+    </div>
+  </div>         
+</div>
+</div>      
+    
+<!-- Displaying summary for that particular day -->    
+<div class="row">
+        <div class="col-sm-3">
+          <div class="well cards">
+            <h4>Total No. of Patients</h4>
+            <h2>239</h2>
+            <p>1 February, 2022</p>
+          </div>
+		</div>  
+    
+        <div class="col-sm-3">
+          <div class="well cards">
+            <h4>Patients Visited Today</h4>
+            <h2>112</h2>
+            <p>1 February, 2022</p>
+          </div>
+        </div>
+    
+        <div class="col-sm-3">
+          <div class="well cards">
+            <h4>Recent Appointment</h4>
+            <h2>82</h2>
+              <p>1 February, 2022</p>
+          </div>
+        </div>
+    
+        <div class="col-sm-3">
+          <div class="well cards">
+            <h4>Appointment Cancelled</h4>
+            <h2>12</h2>
+              <p>1 February, 2022</p>
+          </div>
+        </div>
+</div>
+    
+<!-- Displaying Weekly Patient's visit using Chart -->    
+ <div class="row">
+<!-- Bar Graph -->    
+
+    <div class="col-sm-6">
+        <h2><center>Weekly Patients Visit</center></h2>
+        <div class="box">
+				<div class="skills">
+					<div class="graph" style="height: 85%">
+						<div class="percent">106</div>
+					</div>
+					<div class="name">MON</div>
+				</div>
+            
+                <div class="skills">
+					<div class="graph" style="height: 75%">
+						<div class="percent">90</div>
+					</div>
+					<div class="name">TUE</div>
+				</div>
+			
+				<div class="skills">
+					<div class="graph" style="height: 20%">
+						<div class="percent">20</div>
+					</div>
+					<div class="name">WED</div>
+				</div>
+			
+				<div class="skills">
+					<div class="graph" style="height: 35%">
+						<div class="percent">45</div>
+					</div>
+					<div class="name">THU</div>
+				</div>
+		
+				<div class="skills">
+					<div class="graph" style="height: 90%">
+						<div class="percent">128</div>
+					</div>
+					<div class="name">FRI</div>
+				</div>
+        </div>
+    </div>
+    
+  
+  
+    <!-- Pie chart -->    
+     <div class="col-sm-6 pie-border"> 
+        <div class="pie-cover">
+            <h2><center>Daily Reports Analysis</center></h2>
+            <div class="piechart"></div>
+            
+            <!-- Pie chart menu-->    
+            <div class="table-row">
+              <div class="column">
+                <table class="first-table">
+                    <tr>
+                        <td class="first-td">Corona</td>
+                        <td class="first-td"><button style="background-color: orangered; color:orangered; width:20px;height:20px;text-align: left;border-radius: 50%;"></button></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="first-td">Cold and Flu</td>
+                        <td class="first-td"><button style="background-color:#BF2954; color:#BF2954; width:20px;height:20px;text-align: left;border-radius: 50%;"></button></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="first-td">Malaria</td>
+                        <td class="first-td"><button style="background-color:palegreen; color:palegreen; width:20px;height:20px;text-align: left;border-radius: 50%;"></button></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="first-td">Chickenpox</td>
+                        <td class="first-td"><button style="background-color: lightcoral; color:lightcoral; width:20px;height:20px;text-align: left;border-radius: 50%;"></button></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="first-td">Others</td>
+                        <td class="first-td"><button style="background-color: lightblue; color:lightblue; width:20px;height:20px;text-align: left;border-radius: 50%;"></button></td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+                    
+        </div>
+    </div>    
+</div>       
+
+<!-- Table for displaying Patient's history-->      
+<div class="row">    
+<div class="col-sm-12 wrap-table" >
+    
+   <h2>Patient History</h2>
+   <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Sr. No</th>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Name</th>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Contact</th>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Disease</th>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Heart Rate</th>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Oxygen Level</th>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Temperature</th>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Details</th>
+  </tr>
+       
+  <tr>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">1</th>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Raj Dev</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">7845632190</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Corona</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">50bpm</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">60 SpO2</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">40 C</td>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;"><button class="btn">>></button></th>
+  </tr>
+  <tr>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">2</th>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Kavya Deshmukh</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">90235617832</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Malaria</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">60bpm</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">87 SpO2</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">32 C</td>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;"><button class="btn">>></button></th>
+  </tr>
+  <tr>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">3</th>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Immanuel</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">76589802314</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Cold and Flu</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">60bpm</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">99 SpO2</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">29 C</td>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;"><button class="btn">>></button></th>
+  </tr>
+  <tr>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">4</th>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Kirsh Roy</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">9932451098</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Malaria</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">88bpm</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">120 SpO2</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">43 C</td>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;"><button class="btn">>></button></th>
+  </tr>
+  <tr>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">5</th>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Radha Singh</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">7723128902</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Chickenpox</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">73bpm</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">81 SpO2</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">34 C</td>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;"><button class="btn">>></button></th>
+  </tr>
+  <tr>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">6</th>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Ria Silva</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">63245678</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">Typhoid</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">100bpm</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">72 SpO2</td>
+    <td style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">44 C</td>
+    <th style=" border: 1px solid #dddddd; text-align: left;padding: 8px;"><button class="btn">>></button></th>
+  </tr>
+       
+</table>
+   <br>
+       
+    <h4><a>View More....</a></h4>
+
+</div>
+</div>
+    
+<br>    
+   
+<!-- Footer -->    
+<div class="row" style="margin-top:250px;">
+<div class="col-sm-12" >
+<footer>
+        <div class="footer-content">
+            <h3>Lifelife Hospital</h3>
+            <p>Get Care Now </p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy; <a href="#">LifeLine Hospital</a>  </p>
+                    <p style="float: right;color: white;"> Powered by @Lifeline Hospital</p>
+        </div>
+
+    </footer>
+        
+        
+  </div>
+</div>
+</div>        
+        
+        
+        
+        
+        
+        
+    
+          
+
+
+
+
+</body>
+</html>
