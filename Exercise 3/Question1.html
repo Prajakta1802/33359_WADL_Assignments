@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  #font-family: Lucida Console;
+  padding: 10px;
+  background: #f1f1f1;
+  font-size: 25px;
+}
+
+.header {
+ background:red;
+}
+
+.logo {
+	overflow:hidden;
+    text-align:center;
+    background: red;
+    border:1px;
+    float: left;
+    width: 25%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.heading {
+    text-align:center;
+    background: green;
+    border:1px;
+    margin-bottom:0px;
+    width:75%;
+    float:right;
+}
+
+/* Header/Blog Title 
+.header {
+  text-align: center;
+  background: white;
+}
+*/
+
+.header h1 {
+  font-size: 30px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow:hidden;
+  display:block;
+  text-align: center;
+  padding:10px 10px 10px;
+  text-decoration: none;
+  margin-top:25;
+  width:100%;
+  background-color: yellow;
+  text-align:center;
+  padding-top:10px;
+  margin-top:20px;
+  margin-bottom:0px
+
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height:120px;
+}
+
+/* Left and right column */
+.column.side1 {
+  width: 33%;
+   background-color: blue;
+}
+
+.column.side2 {
+  width: 34%;
+   background-color:#EE82EE;
+}
+
+/* Middle column */
+.column.middle {
+  width: 33%;
+   background-color: #696969;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side1, .column.side2, .column.middle {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    background-color: red;
+  }
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+  background-color: #00FF7F;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #808000;
+  padding-left: 0px;
+}
+
+/* Add a card effect for articles */
+.card {
+  padding: 20px;
+  margin-top: 20px;
+  height:300px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 1px 1px 0px 1px;
+  text-align: center;
+  background: #20B2AA;
+  margin-top: 0px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+ <div class="header">
+	<div class="logo">
+	<h1>LOGO</h1>
+	</div>
+    
+    <div class="heading">
+  <h1>Website Heading</h1>
+  </div>
+</div>
+
+<div class="topnav">
+
+ <p><b>MENU</b></p>
+</div>
+
+
+<div class="row">
+  <div class="column side1">
+    <h2>SECTION 1</h2>
+  </div>
+  
+  <div class="column middle">
+    <h2>SECTION 2</h2>
+  </div>
+  
+  <div class="column side2">
+    <h2>SECTION 3</h2>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3 style="text-align:center;margin-top:100px;font-size:40px">PAGE CONTENTS</h3>
+    </div>
+    
+     </div>
+     
+    <div class="rightcolumn">
+    <div class="card">
+      <h2 style="text-align:center;margin-top:100px;font-size:39px">SIDE BAR</h2>
+    </div>
+   
+ 
+</div>
+    
+</div>
+
+<div class="footer">
+  <h2 style="text-align:center;background-color:deep blue;margin-top:2px">PAGE FOOTER</h2>
+</div>
+
+</body>
+</html>
+
+
