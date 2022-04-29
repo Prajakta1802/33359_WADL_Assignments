@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        fieldset {
+            border: 1px solid;
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+    <title>ques3</title>
+
+</head>
+
+<body style="background-color: rgb(110, 173, 81)">
+    <fieldset style="background-color: green;width:50%">
+        <legend style="text-align: center; font-family: cursive; padding:10px;">USER FORM</legend>
+        <table>
+            <tr>
+                <td>
+                    <ul style="list-style-type:disc; font-family: cursive;">
+                        <li> FIRST NAME:</li>
+                </td>
+                </ul>
+                <td> &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text"></td>
+            </tr>
+            <td>
+                <ul style="list-style-type:disc; font-family: cursive;">
+                    <li> PASSWORD:</li>
+            </td>
+            </ul>
+            <td> &nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="password"></td>
+            <tr>
+                <td>
+                    <ul style="list-style-type:disc; font-family: cursive;">
+                        <li> GENDER:</li>
+                </td>
+                </ul>
+                <td> &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio"><label style="font-family: cursive;">MALE</label>
+                    <input type="radio"><label style="font-family: cursive;">FEMALE</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul style="list-style-type:disc; font-family: cursive;">
+                        <li> ADDRESS:</li>
+                </td>
+                </ul>
+                <td>
+                    &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <textarea rows="3"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul style="list-style-type:disc; font-family: cursive;">
+                        <li>D.O.B</li>
+                </td>
+                </ul>
+                <td>&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <select name="month">
+                        <option>Jan</option>
+                        <option>Feb</option>
+                        <option>Mar</option>
+                        <option>Apr</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>Jul</option>
+                        <option>Aug</option>
+                        <option>Sept</option>
+                        <option>Oct</option>
+                        <option>Nov</option>
+                        <option>Dec</option>
+
+                    </select>
+                    <select name="day">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                    <select name="year">
+                        <option>1990</option>
+                        <option>1991</option>
+                        <option>1992</option>
+                        <option>1993</option>
+                        <option>1994</option>
+                        <option>1995</option>
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul style="list-style-type:disc; font-family: cursive;">
+                        <li>Select Games</li>
+                </td>
+                <td>
+                    &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="game1" name="game1" value="Hockey">
+                    <label style="font-family: cursive;" for="game1">Hockey</label>
+                    <input type="checkbox" id="game2" name="game2" value="Football">
+                    <label style="font-family: cursive;" for="game2">Football</label>
+                    <input type="checkbox" id="game4" name="game4" value="Cricket">
+                    <label style="font-family: cursive;" for="game4">Cricket</label>
+                    <input type="checkbox" id="game5" name="game5" value="volleyball">
+                    <label style="font-family: cursive;" for="game5">volleyball</label>
+                </td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul style="list-style-type:disc; font-family: cursive;">
+                        <li>
+                            Marital Status
+                        </li>
+                    </ul>
+                </td>
+
+                <td>
+                    &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <input type="radio" id="married" value="married" name="married" checked>
+                    <label for="married" style="font-family: cursive;">Married</label>
+                    <input type="radio" id="unmar" value="unmar" name="unmar">
+                    <label for="unmar" style="font-family: cursive;">Unmarried</label>
+                </td>
+            <tr>
+                <td colspan="4" style="font-family: cursive;">
+                    &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="Submit">
+                    <input type="button" value="Reset">
+            </tr>
+            </td>
+            <tr>
+                <td></td>
+                <td>
+                    <br>
+                    &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <input type="checkbox" id="term" name="term" value="terms">
+                    <label style="font-family: cursive;" for="term">I accept this agreement</label>
+            </tr>
+            </td>
+
+    </fieldset>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+body{
+    background-color: #f3e98d;
+}
+h3{
+    border: 4px solid coral;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-style: italic;
+}
+table {
+    width: 100%;
+    background-color: lavender;
+  }
+  
+  th {
+    height: 70px;
+    background-color: lavender;
+  }
